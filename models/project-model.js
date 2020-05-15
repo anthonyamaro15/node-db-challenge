@@ -24,16 +24,6 @@ function deleteProject(id) {
   return db("projects").where({ id }).del();
 }
 
-// function getTasks() {
-//   return db("projects as p")
-//     .join("tasks as t", "p.id", "t.project_id")
-//     .select("t.id", "p.name", "p.description");
-// }
-
-// function addTasks(body) {
-//   return db("tasks").insert(body, "id");
-// }
-
 async function getById(ids) {
   const [values] = await db("projects as p")
     .select("p.id", "p.name", "p.description", "p.completed")
@@ -56,8 +46,6 @@ module.exports = {
   addResources,
   addProject,
   getAllProjects,
-  //   getTasks,
-  //   addTasks,
   getById,
   updateProject,
   deleteProject,

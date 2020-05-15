@@ -1,5 +1,6 @@
 const express = require("express");
 const db = require("../models/project-model");
+// const { validateProjectId } = require("../middlewares/validation");
 
 const route = express.Router();
 
@@ -58,6 +59,8 @@ route.get("/projects", (req, res) => {
 // GET  /api/projects/:id
 route.get("/projects/:id", (req, res) => {
   const { id } = req.params;
+  //   console.log("response ", req.project);
+  //   res.status(200).json(req.project);
   db.getById(id)
     .then((project) => {
       res.status(200).json(project);
