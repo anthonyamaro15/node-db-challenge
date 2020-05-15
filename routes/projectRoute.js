@@ -69,4 +69,30 @@ route.get("/projects/:id", (req, res) => {
     });
 });
 
+route.put("/projects/:id", (req, res) => {
+  const { id } = req.params;
+  db.updateProject(req.body, id)
+    .then((project) => {
+      res.status(200).json(project);
+    })
+    .catch((err) => {
+      res
+        .status(500)
+        .json({ errorMessage: "there was an error updating project" });
+    });
+});
+
+route.delete("/projects/:id", (req, res) => {
+  const { id } = req.params;
+  db.deleteProject(id)
+    .then((project) => {
+      res.status(200).json(project);
+    })
+    .catch((err) => {
+      res
+        .status(500)
+        .json({ errorMessage: "there was an error deleting project" });
+    });
+});
+
 module.exports = route;

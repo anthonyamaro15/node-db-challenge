@@ -16,15 +16,23 @@ function getAllProjects() {
   return db("projects");
 }
 
-function getTasks() {
-  return db("projects as p")
-    .join("tasks as t", "p.id", "t.project_id")
-    .select("t.id", "p.name", "p.description");
+function updateProject(changes, id) {
+  return db("projects").where({ id }).update(changes);
 }
 
-function addTasks(body) {
-  return db("tasks").insert(body, "id");
+function deleteProject(id) {
+  return db("projects").where({ id }).del();
 }
+
+// function getTasks() {
+//   return db("projects as p")
+//     .join("tasks as t", "p.id", "t.project_id")
+//     .select("t.id", "p.name", "p.description");
+// }
+
+// function addTasks(body) {
+//   return db("tasks").insert(body, "id");
+// }
 
 async function getById(ids) {
   const [values] = await db("projects as p")
@@ -48,7 +56,9 @@ module.exports = {
   addResources,
   addProject,
   getAllProjects,
-  getTasks,
-  addTasks,
+  //   getTasks,
+  //   addTasks,
   getById,
+  updateProject,
+  deleteProject,
 };
