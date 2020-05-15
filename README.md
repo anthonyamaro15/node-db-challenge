@@ -38,13 +38,21 @@ Commit your code regularly and use descriptive messages. This helps both you (in
 
 Demonstrate your understanding of this week's concepts by answering the following free-form questions. Edit this document to include your answers after each question. Make sure to leave a blank line above and below your answer so it is clear and easy to read by your project manager.
 
-- [ ] Explain the difference between `Relational Databases` and `SQL`.
+- [x] Explain the difference between `Relational Databases` and `SQL`.
+      --SQL databases are verticaly scalable.
+      --NoSQL databases are horixzontally scalable.
 
-- [ ] Why do tables need a `primary key`?
+  --SQL databases are best suited for complex queries
+  --NoSQL dabases are not so good for complex queries
 
-- [ ] What is the name given to a table column that references the primary key on another table.
+- [x] Why do tables need a `primary key`?
+      -- primary keys is how you can find tables, it ensures row level accessibility.
 
-- [ ] What do we need in order to have a _many to many_ relationship between two tables.
+- [x] What is the name given to a table column that references the primary key on another table.
+      -- those are call foreign keys
+
+- [x] What do we need in order to have a _many to many_ relationship between two tables.
+      -- a many to many relationship occurs when multiple recors in a table are associated with multiple records in another table.
 
 ## Minimum Viable Product
 
